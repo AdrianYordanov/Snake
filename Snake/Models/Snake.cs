@@ -78,7 +78,10 @@
             }
 
             this.CheckBorder();
-            this.body.ForEach(snakePart => snakePart.Paint());
+            for (int i = this.body.Count - 1; i >= 0; i--)
+            {
+                this.body[i].Paint();
+            }
         }
 
         public bool CheckEatFood(FoodPart food)

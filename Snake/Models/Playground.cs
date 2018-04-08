@@ -7,7 +7,7 @@
     {
         private const string Title = "Developer: Adrian Yordanov";
         private const char BorderCharacter = ' ';
-        private const ConsoleColor TitleColor = ConsoleColor.DarkGreen;
+        private const ConsoleColor TitleColor = ConsoleColor.Cyan;
         private const ConsoleColor BorderColor = ConsoleColor.DarkMagenta;
         private readonly int leftBorder;
         private readonly int rightBorder;

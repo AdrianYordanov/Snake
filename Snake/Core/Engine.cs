@@ -56,6 +56,8 @@
 
                 Thread.Sleep(this.snake.Interval);
             }
+
+            this.Exit();
         }
 
         private void CheckKey()
@@ -103,6 +105,14 @@
                         return;
                 }
             }
+        }
+
+        private void Exit()
+        {
+            Utilites.ConsoleDefaultColors();
+            Console.SetCursorPosition(PlaygroundBorderLeft, PlaygroundBorderDown + 2);
+            Console.WriteLine("Press any key to continue . . .");
+            Console.ReadKey(true);
         }
     }
 }
