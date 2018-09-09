@@ -19,18 +19,15 @@
 
         public Engine()
         {
-            this.playground = new Playground(
-                PlaygroundBorderLeft,
+            this.playground = new Playground(PlaygroundBorderLeft,
                 PlaygroundBorderRight,
                 PlaygroundBorderUp,
                 PlaygroundBorderDown);
-            this.snake = new Snake(
-                PlaygroundBorderLeft,
+            this.snake = new Snake(PlaygroundBorderLeft,
                 PlaygroundBorderRight,
                 PlaygroundBorderUp,
                 PlaygroundBorderDown);
-            this.food = new FoodPart(
-                PlaygroundBorderLeft,
+            this.food = new FoodPart(PlaygroundBorderLeft,
                 PlaygroundBorderRight,
                 PlaygroundBorderUp,
                 PlaygroundBorderDown);
@@ -69,8 +66,7 @@
                 {
                     case ConsoleKey.UpArrow:
                     case ConsoleKey.W:
-                        if (this.snake.Direction == Direction.Left ||
-                            this.snake.Direction == Direction.Right)
+                        if ((this.snake.Direction == Direction.Left) || (this.snake.Direction == Direction.Right))
                         {
                             this.snake.Direction = Direction.Up;
                         }
@@ -78,8 +74,7 @@
                         return;
                     case ConsoleKey.DownArrow:
                     case ConsoleKey.S:
-                        if (this.snake.Direction == Direction.Left ||
-                            this.snake.Direction == Direction.Right)
+                        if ((this.snake.Direction == Direction.Left) || (this.snake.Direction == Direction.Right))
                         {
                             this.snake.Direction = Direction.Down;
                         }
@@ -87,8 +82,7 @@
                         return;
                     case ConsoleKey.LeftArrow:
                     case ConsoleKey.A:
-                        if (this.snake.Direction == Direction.Up ||
-                            this.snake.Direction == Direction.Down)
+                        if ((this.snake.Direction == Direction.Up) || (this.snake.Direction == Direction.Down))
                         {
                             this.snake.Direction = Direction.Left;
                         }
@@ -96,8 +90,7 @@
                         return;
                     case ConsoleKey.RightArrow:
                     case ConsoleKey.D:
-                        if (this.snake.Direction == Direction.Up ||
-                            this.snake.Direction == Direction.Down)
+                        if ((this.snake.Direction == Direction.Up) || (this.snake.Direction == Direction.Down))
                         {
                             this.snake.Direction = Direction.Right;
                         }

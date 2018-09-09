@@ -5,10 +5,6 @@
 
     public abstract class Part : IPosition, IPaintable
     {
-        private int x;
-        private int y;
-        private ConsoleColor color;
-
         protected Part()
         {
         }
@@ -22,20 +18,19 @@
 
         public ConsoleColor Color
         {
-            get => this.color;
-            private set => this.color = value;
+            get;
         }
 
         public int X
         {
-            get => this.x;
-            set => this.x = value;
+            get;
+            set;
         }
 
         public int Y
         {
-            get => this.y;
-            set => this.y = value;
+            get;
+            set;
         }
 
         public abstract void Paint();

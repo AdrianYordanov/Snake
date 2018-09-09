@@ -19,7 +19,6 @@
         private readonly int downBorder;
         private readonly List<SnakePart> body;
         private int interval;
-        private Direction direction;
 
         public Snake(int leftBorder, int rightBorder, int upBorder, int downBorder)
         {
@@ -29,8 +28,7 @@
             this.downBorder = downBorder;
             this.body = new List<SnakePart>
             {
-                new SnakePart(
-                    Utilites.GenerateNumber(this.leftBorder + 1, this.rightBorder - 1),
+                new SnakePart(Utilites.GenerateNumber(this.leftBorder + 1, this.rightBorder - 1),
                     Utilites.GenerateNumber(this.upBorder + 1, this.downBorder - 1),
                     HeadColor)
             };
@@ -43,8 +41,7 @@
             get => this.interval;
             private set
             {
-                if (value >= MinInterval &&
-                    value <= MaxInterval)
+                if ((value >= MinInterval) && (value <= MaxInterval))
                 {
                     this.interval = value;
                 }
@@ -53,8 +50,8 @@
 
         public Direction Direction
         {
-            get => this.direction;
-            set => this.direction = value;
+            get;
+            set;
         }
 
         public void Move()
@@ -64,23 +61,28 @@
             switch (this.Direction)
             {
                 case Direction.Up:
-                    this.body[0].Y--;
+                    this.body[0]
+                       .Y--;
                     break;
                 case Direction.Down:
-                    this.body[0].Y++;
+                    this.body[0]
+                       .Y++;
                     break;
                 case Direction.Left:
-                    this.body[0].X--;
+                    this.body[0]
+                       .X--;
                     break;
                 case Direction.Right:
-                    this.body[0].X++;
+                    this.body[0]
+                       .X++;
                     break;
             }
 
             this.CheckBorder();
-            for (int i = this.body.Count - 1; i >= 0; i--)
+            for (var i = this.body.Count - 1; i >= 0; i--)
             {
-                this.body[i].Paint();
+                this.body[i]
+                   .Paint();
             }
         }
 
@@ -88,8 +90,7 @@
         {
             foreach (var snakePart in this.body)
             {
-                if (snakePart.X == food.X &&
-                    snakePart.Y == food.Y)
+                if ((snakePart.X == food.X) && (snakePart.Y == food.Y))
                 {
                     this.AddSnakePart();
                     this.Interval -= IntervalDifference;
@@ -105,8 +106,7 @@
             var head = this.body.First();
             foreach (var snakePart in this.body.Skip(1))
             {
-                if (snakePart.X == head.X &&
-                    snakePart.Y == head.Y)
+                if ((snakePart.X == head.X) && (snakePart.Y == head.Y))
                 {
                     isGameOver = true;
                     return;
@@ -124,8 +124,12 @@
         {
             for (var i = this.body.Count - 1; i > 0; i--)
             {
-                this.body[i].X = this.body[i - 1].X;
-                this.body[i].Y = this.body[i - 1].Y;
+                this.body[i]
+                   .X = this.body[i - 1]
+                   .X;
+                this.body[i]
+                   .Y = this.body[i - 1]
+                   .Y;
             }
         }
 
